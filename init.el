@@ -389,6 +389,9 @@ you should place your code here."
 
   (setq url-proxy-services '(("http" . "127.0.0.1:1087")))
 
+  ;; org mode 自动换行
+  (add-hook 'org-mode-hook 'toggle-truncate-lines)
+
   ;; (setq org-journal-dir "~/org.mode")
 
   ;; (add-to-list 'org-capture-templates
