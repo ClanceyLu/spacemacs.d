@@ -62,6 +62,7 @@ values."
      version-control
      markdown
      (org :variables
+          org-want-todo-bindings t
           org-enable-org-journal-support t)
      evil-snipe
      osx
