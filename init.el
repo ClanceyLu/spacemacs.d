@@ -75,7 +75,7 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      )
    ;; List of additional packages that will be installed without being
@@ -392,6 +392,12 @@ you should place your code here."
 
   ;; org mode 自动换行
   (add-hook 'org-mode-hook 'toggle-truncate-lines)
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "DOING(i)" "|" "DONE(d)" "ABORT(a)")))
+  (setq org-todo-keyword-faces '(("TODO" . "#e7a867")
+                                 ("DOING" . "#ff6666")
+                                 ("ABORT" . "#a9a9a9")
+                                 ("DONE" . "#86dc2f")))
 
   ;; (setq org-journal-dir "~/org.mode")
 
