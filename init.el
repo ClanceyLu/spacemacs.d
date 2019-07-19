@@ -159,7 +159,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(dracula)
+   dotspacemacs-themes '(
+                         ;; dracula
+                         gruvbox-dark-soft
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -361,6 +364,8 @@ you should place your code here."
 
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
+  (global-company-mode)
+
   ;; js
   (setq js2-mode-show-strict-warnings nil)
   (setq js2-mode-show-parse-errors nil)
@@ -377,14 +382,20 @@ you should place your code here."
   ;; typescript
   (setq-default typescript-indent-level 2)
 
-  (setq-default evil-escape-key-sequence "jk")
+  ;; map jk to escape
+  (setq-default
+    evil-escape-key-sequence "jk"
+    evil-escape-delay 0.3)
+
   (setq-default go-format-before-save t)
-  (setq gofmt-command "goimports")
+
+  (setq
+   go-format-before-save t
+   gofmt-command "goimports")
 
   (setq neo-theme 'icons)
   ;; (setq neo-vc-integration '(char))
 
-  (setq go-format-before-save t)
   (setq-default dotspacemacs-configuration-layers
                 '((syntax-checking :variables syntax-checking-enable-tooltips nil)))
 
