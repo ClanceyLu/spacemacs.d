@@ -366,6 +366,12 @@ you should place your code here."
 
   (global-company-mode)
 
+  (setq scroll-margin 7)
+
+  ;; like j to gj
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
   ;; js
   (setq js2-mode-show-strict-warnings nil)
   (setq js2-mode-show-parse-errors nil)
@@ -385,7 +391,7 @@ you should place your code here."
   ;; map jk to escape
   (setq-default
     evil-escape-key-sequence "jk"
-    evil-escape-delay 0.3)
+    evil-escape-delay 0.2)
 
   (setq-default go-format-before-save t)
 
